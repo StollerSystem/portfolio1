@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,11 +52,11 @@ export default function Header() {
 
   useEffect(() => {
     setChecked(true);
-  },[])
+  }, [])
 
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="header">
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
 
@@ -74,9 +75,11 @@ export default function Header() {
           <h1 className={classes.title}>
             Welcome to <span className={classes.colorText}>STOLLERSYSTEM</span>
           </h1>
-          <IconButton>
-            <ArrowDownwardIcon className={classes.goDown} />
-          </IconButton>
+          <Scroll to="projects" smooth="true">
+            <IconButton>
+              <ArrowDownwardIcon className={classes.goDown} />
+            </IconButton>
+          </Scroll>
         </div>
       </Collapse>
     </div>
