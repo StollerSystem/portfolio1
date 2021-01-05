@@ -5,7 +5,7 @@ import projects from '../static/projects';
 import useWindowPosition from '../hook/useWindowPosition';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  projects: {
     minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
@@ -16,8 +16,15 @@ const useStyles = makeStyles((theme) => ({
 export default function Projects() {
   const classes = useStyles();
   const checked = useWindowPosition('header');
-  return <div className={classes.root} id="projects">
-    <ProjectCard project={projects[0]} checked={checked} />
-    <ProjectCard project={projects[1]} checked={checked}  />
-  </div>
-}
+  return (
+    <div>
+      <h1>PROJECTS</h1>
+      <div className={classes.projects} id="projects">
+        <ProjectCard project={projects[0]} checked={checked} />
+        <ProjectCard project={projects[1]} checked={checked} />
+        <ProjectCard project={projects[1]} checked={checked} />
+        <ProjectCard project={projects[1]} checked={checked} />
+      </div>
+    </div>
+  );
+};

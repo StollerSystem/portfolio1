@@ -12,6 +12,7 @@ import { Collapse } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     maxWidth: 645,
+    minWidth: 300,
     background: 'rgba(0,0,0,0.5)',
     margin: '20px'
   },
@@ -40,8 +41,7 @@ export default function ProjectCard({ project, checked}) {
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
-            className={classes.media}
-            // image={process.env.PUBLIC_URL + '/assets/Heptagram1.jpg'}
+            className={classes.media}            
             image={project.image}
             title="Contemplative Reptile"
           />

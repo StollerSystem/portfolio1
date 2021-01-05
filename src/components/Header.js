@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white'
   },
   appbar: {
-    background: 'none',
+    background: 'rgba(0,0,0,0.5)',
     fontFamily: ''
   },
   appbarTitle: {
@@ -47,19 +47,15 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
 
   const classes = useStyles();
-
   const [checked, setChecked] = useState(false);
-
   useEffect(() => {
     setChecked(true);
   }, [])
-
 
   return (
     <div className={classes.root} id="header">
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
-
           <h1 className={classes.appbarTitle}>STOLLER <span className={classes.colorText}>SYSTEM</span></h1>
           <IconButton>
             <SortIcon className={classes.icon} />
@@ -73,7 +69,7 @@ export default function Header() {
       >
         <div className={classes.container}>
           <h1 className={classes.title}>
-            Welcome to <span className={classes.colorText}>STOLLERSYSTEM</span>
+            <span className={classes.colorText}>STOLLERSYSTEM</span>
           </h1>
           <Scroll to="projects" smooth="true">
             <IconButton>
